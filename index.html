@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Demo</title>
+</head>
+<body>
+    <h1>Todo list</h1>
+    <input type="text" id="task">
+    <button id="add-task">Add task</button>
+    <ul id="task-list">
+        
+    </ul>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(() => {
+        $('#add-task').click(() => {
+            const inputValue = $('#task').val();
+            const item = $('<li>').text(inputValue);
+            const checkbox = $('<input>',{type: 'checkbox'})
+            item.append(checkbox)
+            $('#task-list').append(item)
+            $('#task').val('');
+        })
+    });
+</script>
+</html>
